@@ -81,9 +81,9 @@ export class App extends Component {
           paddingBottom: '24px',
         }}
       >
-        {this.state.isLoading && (
+        {this.state.isLoading ? (
           <Loader />
-        ) (
+        ) : (
           <React.Fragment>
             <Searchbar onSubmit={this.handleSubmit} />
             <ImageGallery
