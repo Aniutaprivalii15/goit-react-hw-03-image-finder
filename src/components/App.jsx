@@ -67,9 +67,9 @@ export class App extends Component {
     }
   };
 
-  async componentDidMount() {
-    window.addEventListener('keydown', this.handleKeyDown);
-  }
+  // async componentDidMount() {
+  //   window.addEventListener('keydown', this.handleKeyDown);
+  // }
 
   render() {
     return (
@@ -81,27 +81,27 @@ export class App extends Component {
           paddingBottom: '24px',
         }}
       >
-        {this.state.isLoading ? (
+        {this.state.isLoading && (
           <Loader />
-        ) : (
+        ) (
           <React.Fragment>
             <Searchbar onSubmit={this.handleSubmit} />
             <ImageGallery
               onImageClick={this.handleImageClick}
               images={this.state.images}
             />
-            {this.state.images.length > 0 ? (
+            {this.state.images.length > 0 && (
               <Button onClick={this.handleClickMore} />
-            ) : null}
+            )}
           </React.Fragment>
         )}
-        {this.state.modalOpen ? (
+        {this.state.modalOpen && (
           <Modal
             src={this.state.modalImg}
             alt={this.state.modalAlt}
             handleClose={this.handleModalClose}
           />
-        ) : null}
+        )}
       </div>
     );
   }
