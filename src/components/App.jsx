@@ -16,6 +16,7 @@ export class App extends Component {
     modalOpen: false,
     modalImg: '',
     modalAlt: '',
+    isShowLoadMoreBtn: true,
   };
 
   handleSubmit = async e => {
@@ -67,9 +68,9 @@ export class App extends Component {
     }
   };
 
-  // async componentDidMount() {
-  //   window.addEventListener('keydown', this.handleKeyDown);
-  // }
+  async componentDidMount() {
+    window.addEventListener('keydown', this.handleKeyDown);
+  }
 
   render() {
     return (
