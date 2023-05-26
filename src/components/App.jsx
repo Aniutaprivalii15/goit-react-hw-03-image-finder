@@ -12,6 +12,7 @@ export class App extends Component {
     images: [],
     isLoading: false,
     currentSearch: '',
+    isShowButton: true,
     pageNr: 1,
     modalOpen: false,
     modalImg: '',
@@ -31,6 +32,7 @@ export class App extends Component {
       images: response,
       isLoading: false,
       currentSearch: inputForSearch.value,
+      isShowButton: false,
       pageNr: 1,
     });
   };
@@ -92,7 +94,7 @@ export class App extends Component {
               images={this.state.images}
             />
             {this.state.images.length > 0 && (
-              <Button onClick={this.handleClickMore} />
+             <Button onClick={this.handleClickMore} />
             )}
           </React.Fragment>
         )}
